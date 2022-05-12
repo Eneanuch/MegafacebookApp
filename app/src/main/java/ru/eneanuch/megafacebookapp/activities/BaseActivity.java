@@ -20,7 +20,7 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         PreferenceFunctions preferenceFunctions = new PreferenceFunctions(getApplicationContext());
-        FirebaseFirestore db=  FirebaseFirestore.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
         documentReference = db.collection(Variables.USERS_TABLE)
                 .document(preferenceFunctions.getString(Variables.USER_ID));
     }

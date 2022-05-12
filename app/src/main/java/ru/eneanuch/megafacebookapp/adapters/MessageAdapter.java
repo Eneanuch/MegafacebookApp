@@ -16,11 +16,15 @@ import ru.eneanuch.megafacebookapp.models.MessageModel;
 public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private final List<MessageModel> messages;
-    private final Bitmap receiverProfileImage;
+    private Bitmap receiverProfileImage;
     private final String senderId;
 
     public static final int VIEW_TYPE_SENT = 1;
     public static final int VIEW_TYPE_RECEIVED = 2;
+
+    public void setReceiverProfileImage(Bitmap bitmap) {
+        receiverProfileImage = bitmap;
+    }
 
 
     public MessageAdapter(List<MessageModel> messages, Bitmap receiverProfileImage, String senderId) {
@@ -101,6 +105,9 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         void setData(MessageModel messageModel, Bitmap receiverProfileImage) {
             binding.messageText.setText(messageModel.message);
             binding.dateMessage.setText(messageModel.dateTime);
+            if (receiverProfileImage != null) {
+                binding.imageProfile.setImageBitmap(receiverProfileImage);
+            }
             binding.imageProfile.setImageBitmap(receiverProfileImage);
         }
     }

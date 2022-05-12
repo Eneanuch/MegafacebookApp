@@ -185,6 +185,11 @@ public class ChatActivity extends BaseActivity {
                    isReceiverOnline = online == 1;
                }
                receiverUser.token = value.getString(Variables.TOKEN);
+               if (receiverUser.image == null) {
+                   receiverUser.image = value.getString(Variables.USER_IMAGE);
+                   messageAdapter.setReceiverProfileImage(getBitmapFromEncodedString(receiverUser.image));
+                   messageAdapter.notifyItemRangeChanged(0, messages.size());
+               }
            }
            if (isReceiverOnline) {
                binding.online.setVisibility(View.VISIBLE);
@@ -226,8 +231,12 @@ public class ChatActivity extends BaseActivity {
     });
 
     private Bitmap getBitmapFromEncodedString(String encodedImage) {
-        byte[] bytes = Base64.decode(encodedImage, Base64.DEFAULT);
-        return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+        if (encodedImage != null) {
+            byte[] bytes = Base64.decode(encodedImage, Base64.DEFAULT);
+            return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+        } else {
+            return null;
+        }
     }
 
     private void loadReceiverData() {
