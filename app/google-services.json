@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "422836940357",
+    "project_id": "megafacebook-e10b5",
+    "storage_bucket": "megafacebook-e10b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422836940357:android:778b9c6673cc5cb359bd2c",
+        "android_client_info": {
+          "package_name": "ru.eneanuch.megafacebookapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422836940357-1cjtgi037qi0090fd7pesv6smua727kf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbh0ghtVtDQbnrdoQq4G5i8LopY4uEGmY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422836940357-1cjtgi037qi0090fd7pesv6smua727kf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
